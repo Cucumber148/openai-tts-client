@@ -1,4 +1,4 @@
-/* Основные стили для OpenAI TTS Client */
+/* Main styles for OpenAI TTS Client */
 
 * {
     margin: 0;
@@ -26,7 +26,7 @@ body {
     position: relative;
 }
 
-/* Селектор языка */
+/* Language selector */
 .language-selector {
     position: absolute;
     top: 20px;
@@ -48,7 +48,7 @@ body {
     border-color: #667eea;
 }
 
-/* Заголовок */
+/* Header */
 h1 {
     text-align: center;
     color: #333;
@@ -60,7 +60,7 @@ h1 {
     background-clip: text;
 }
 
-/* Формы */
+/* Forms */
 .form-group {
     margin-bottom: 25px;
 }
@@ -99,7 +99,7 @@ textarea {
     line-height: 1.5;
 }
 
-/* Строки с несколькими элементами */
+/* Rows with multiple elements */
 .row {
     display: flex;
     gap: 20px;
@@ -110,7 +110,7 @@ textarea {
     flex: 1;
 }
 
-/* Слайдер скорости */
+/* Speed slider */
 .speed-container {
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@ input[type="range"]::-moz-range-thumb {
     text-align: center;
 }
 
-/* Кнопки */
+/* Buttons */
 .generate-btn {
     width: 100%;
     padding: 18px;
@@ -197,7 +197,7 @@ input[type="range"]::-moz-range-thumb {
     background: #218838;
 }
 
-/* Загрузка */
+/* Loading */
 .loading {
     display: none;
     margin-top: 20px;
@@ -264,7 +264,7 @@ input[type="range"]::-moz-range-thumb {
     font-size: 12px;
 }
 
-/* Анимации */
+/* Animations */
 .success-animation {
     animation: successPulse 0.6s ease-in-out;
 }
@@ -275,7 +275,7 @@ input[type="range"]::-moz-range-thumb {
     100% { transform: scale(1); }
 }
 
-/* Результат */
+/* Result */
 .result {
     margin-top: 30px;
     padding: 20px;
@@ -295,7 +295,7 @@ audio {
     margin-bottom: 15px;
 }
 
-/* Ошибки */
+/* Errors */
 .error {
     background: #f8d7da;
     color: #721c24;
@@ -306,7 +306,7 @@ audio {
     display: none;
 }
 
-/* Информационные блоки */
+/* Information blocks */
 .model-info {
     background: #e3f2fd;
     padding: 15px;
@@ -316,7 +316,7 @@ audio {
     color: #1976d2;
 }
 
-/* Теги голосов */
+/* Voice tags */
 .voice-preview {
     display: flex;
     flex-wrap: wrap;
@@ -333,7 +333,7 @@ audio {
     font-weight: 500;
 }
 
-/* Адаптивность */
+/* Responsive design */
 @media (max-width: 768px) {
     .language-selector {
         position: static;
