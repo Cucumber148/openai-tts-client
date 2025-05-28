@@ -161,7 +161,29 @@ class TTSClient {
         });
     }
 
-    // Load available models
+    // Get model priority for sorting (higher = better/newer)
+    getModelPriority(modelId) {
+        const id = modelId.toLowerCase();
+        
+        // GPT-based models get highest priority
+        if (id.includes('gpt') && id.includes('tts')) {
+            return 100;
+        }
+        
+        // HD models get medium-high priority
+        if (id.includes('hd')) {
+            return 50;
+        }
+        
+        // Standard TTS models get medium priority
+        if (id.startsWith('tts-')) {
+            return 25;
+        }
+        
+        // Unknown models get lowest priority
+        return 1;
+    }
+
     async loadModels() {
         const apiKey = document.getElementById('apiKey').value;
         const modelSelect = document.getElementById('model');
@@ -207,20 +229,14 @@ class TTSClient {
                 const option = document.createElement('option');
                 option.value = model.id;
                 
-                let description = '';
-                if (model.id.includes('gpt-4o-mini-tts')) {
-                    description = this.t('models.gpt4oMiniDesc');
-                } else if (model.id.includes('tts-1-hd')) {
-                    description = this.t('models.tts1HdDesc');
-                } else if (model.id.includes('tts-1')) {
-                    description = this.t('models.tts1Desc');
-                }
+                let description = model.id;
                 
                 option.textContent = model.id + description;
                 modelSelect.appendChild(option);
             });
 
-            const defaultModel = ttsModels.find(m => m.id.includes('gpt-4o-mini-tts'));
+            // Select best available model by default
+            const defaultModel = ttsModels[0]; // Already sorted by priority
             if (defaultModel) {
                 modelSelect.value = defaultModel.id;
                 this.updateUIForModel(defaultModel.id);
@@ -237,13 +253,19 @@ class TTSClient {
         const instructionsGroup = document.getElementById('instructionsGroup');
         const speedGroup = document.getElementById('speedGroup');
         
-        if (modelId.includes('gpt-4o-mini-tts')) {
+        // GPT-based models support instructions
+        if (this.isGptBasedModel(modelId)) {
             instructionsGroup.style.display = 'block';
             speedGroup.style.display = 'none';
         } else {
             instructionsGroup.style.display = 'none';
             speedGroup.style.display = 'block';
         }
+    }
+
+    // Check if model is GPT-based (supports instructions)
+    isGptBasedModel(modelId) {
+        return modelId.toLowerCase().includes('gpt') && modelId.toLowerCase().includes('tts');
     }
 
     // Update progress
@@ -341,8 +363,8 @@ class TTSClient {
                 response_format: format
             };
 
-            // Add parameters based on model
-            if (model.includes('gpt-4o-mini-tts')) {
+            // Add parameters based on model capabilities
+            if (this.isGptBasedModel(model)) {
                 if (instructions.trim()) {
                     requestData.instructions = instructions.trim();
                 }

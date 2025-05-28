@@ -8,9 +8,6 @@ window.translations.en = {
     // Information blocks
     modelInfo: {
         title: "💡 Model Information:",
-        gpt4oMini: "Latest model with controllable speech and prompts",
-        tts1: "Fast generation, standard quality",
-        tts1Hd: "High quality audio"
     },
     
     // Forms and fields

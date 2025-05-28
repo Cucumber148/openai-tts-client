@@ -8,9 +8,6 @@ window.translations.zh = {
     // 信息块
     modelInfo: {
         title: "💡 模型信息：",
-        gpt4oMini: "最新模型，支持可控语音和提示词",
-        tts1: "快速生成，标准质量",
-        tts1Hd: "高质量音频"
     },
     
     // 表单和字段
