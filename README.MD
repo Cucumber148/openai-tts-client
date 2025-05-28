@@ -1,94 +1,96 @@
 # OpenAI TTS Web Client
 
-Простой веб-клиент для работы с OpenAI Text-to-Speech API. Все функции в одном HTML файле.
+[English](README.MD) | [Русский](README.RU.MD) | [中文](README.ZH.MD)
 
-## Возможности
+Simple web client for OpenAI Text-to-Speech API. All features in a single HTML file.
 
-- Автоматическая загрузка доступных TTS моделей через API
-- Поддержка 11 голосов: alloy, ash, ballad, coral, echo, fable, nova, onyx, sage, shimmer
-- Поддержка модели gpt-4o-mini-tts с промптами для управления речью
-- Настройка скорости, формата аудио, инструкций для голоса
-- Прогресс-бар с детальной информацией о процессе
-- Встроенный аудиоплеер и возможность скачивания
-- Поддержка 50+ языков (оптимизировано для английского)
+## Features
 
-## Установка и запуск
+- Automatic loading of available TTS models via API
+- Support for 11 voices: alloy, ash, ballad, coral, echo, fable, nova, onyx, sage, shimmer
+- Support for gpt-4o-mini-tts model with speech control prompts
+- Configurable speed, audio format, and voice instructions
+- Progress bar with detailed process information
+- Built-in audio player and download functionality
+- Support for 50+ languages (optimized for English)
 
-1. Скачайте файл `openai-tts-client.html`
-2. Откройте в браузере (работает локально, без сервера)
-3. Введите ваш OpenAI API ключ
-4. Введите текст и сгенерируйте речь
+## Installation and Usage
 
-## Поддерживаемые модели
+1. Download the `openai-tts-client.html` file
+2. Open in browser (works locally, no server required)
+3. Enter your OpenAI API key
+4. Enter text and generate speech
 
-- **gpt-4o-mini-tts** - Модель с управляемой речью через промпты
-- **tts-1** - Стандартное качество, быстрая генерация
-- **tts-1-hd** - Высокое качество звука
+## Supported Models
 
-Приложение автоматически загружает все доступные TTS модели с вашего OpenAI аккаунта.
+- **gpt-4o-mini-tts** - Model with controllable speech via prompts
+- **tts-1** - Standard quality, fast generation
+- **tts-1-hd** - High quality audio
 
-## Форматы аудио
+The application automatically loads all available TTS models from your OpenAI account.
 
-- **MP3** - Универсальный формат (по умолчанию)
-- **Opus** - Для интернет-стриминга, низкая задержка
-- **AAC** - Для мобильных устройств и YouTube
-- **FLAC** - Сжатие без потерь
-- **WAV** - Без сжатия, низкая задержка
-- **PCM** - Сырые аудио данные
+## Audio Formats
 
-## Управление речью
+- **MP3** - Universal format (default)
+- **Opus** - For internet streaming, low latency
+- **AAC** - For mobile devices and YouTube
+- **FLAC** - Lossless compression
+- **WAV** - Uncompressed, low latency
+- **PCM** - Raw audio data
 
-Модель gpt-4o-mini-tts поддерживает инструкции для контроля различных аспектов речи:
+## Speech Control
 
-- Акцент: "Используй британский акцент"
-- Эмоциональная окраска: "Говори весело и энергично"
-- Тон голоса: "Говори как радиоведущий"
-- Темп речи: "Говори медленно и четко" 
-- Стиль произношения: "Говори шепотом"
+The gpt-4o-mini-tts model supports instructions for controlling various aspects of speech:
 
-## Технические особенности
+- Accent: "Use British accent"
+- Emotional tone: "Speak cheerfully and energetically"
+- Voice tone: "Speak like a radio host"
+- Speech pace: "Speak slowly and clearly"
+- Pronunciation style: "Speak in a whisper"
 
-- Один HTML файл без внешних зависимостей
-- Работает локально в браузере
-- API ключ сохраняется в localStorage браузера
-- Прямые запросы к OpenAI API
-- Подробное логирование в консоли браузера для отладки
+## Technical Details
 
-## Требования
+- Single HTML file with no external dependencies
+- Works locally in browser
+- API key stored in browser localStorage
+- Direct requests to OpenAI API
+- Detailed logging in browser console for debugging
 
-- OpenAI API ключ с доступом к TTS моделям
-- Современный браузер с поддержкой Fetch API
-- Интернет-соединение
+## Requirements
 
-## Ограничения
+- OpenAI API key with access to TTS models
+- Modern browser with Fetch API support
+- Internet connection
 
-- Максимальная длина текста: 4096 символов
-- Скорость речи настраивается только для моделей tts-1 и tts-1-hd
-- Список голосов статичный (OpenAI не предоставляет API для их получения)
+## Limitations
 
-## Стоимость
+- Maximum text length: 4096 characters
+- Speech speed adjustable only for tts-1 and tts-1-hd models
+- Static voice list (OpenAI doesn't provide API for voice enumeration)
 
-Использует стандартные тарифы OpenAI: примерно $0.015 за 1000 входных символов.
+## Pricing
 
-## Отладка
+Uses standard OpenAI rates: approximately $0.015 per 1000 input characters.
 
-При возникновении проблем:
+## Troubleshooting
 
-1. Откройте консоль браузера (F12)
-2. Проверьте детальные логи запросов и ответов
-3. Убедитесь в корректности API ключа
-4. Проверьте лимиты и баланс OpenAI аккаунта
+If something doesn't work:
 
-## Документация
+1. Open browser console (F12)
+2. Check detailed request and response logs
+3. Verify API key correctness
+4. Check OpenAI account limits and balance
+
+## Documentation
 
 - [OpenAI Text-to-Speech Guide](https://platform.openai.com/docs/guides/text-to-speech)
 - [API Reference](https://platform.openai.com/docs/api-reference/audio/createSpeech)
 - [Pricing Information](https://openai.com/pricing)
 
-## О проекте
+## About This Project
 
-Написал это приложение за несколько минут для быстрого тестирования OpenAI TTS API. Решил поделиться на GitHub на случай, если кому-то пригодится.
+I wrote this application in a few minutes for quick testing of the OpenAI TTS API. Decided to share it on GitHub in case someone finds it useful.
 
-## Лицензия
+## License
 
 GPL-3.0 License
