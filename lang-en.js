@@ -17,7 +17,7 @@ window.translations.en = {
         model: "🤖 TTS Model",
         text: "📝 Text to Speech",
         textPlaceholder: "Enter text to convert to speech...",
-        instructions: "🎭 Speech Instructions (gpt-4o-mini-tts only)",
+        instructions: "🎭 Speech Instructions (gpt tts only)",
         instructionsPlaceholder: "E.g.: Speak cheerfully and positively. Use a British accent.",
         instructionsHint: "You can control: accent, emotions, intonation, speed, tone",
         voice: "🗣️ Voice",

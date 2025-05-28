@@ -17,7 +17,7 @@ window.translations.zh = {
         model: "🤖 TTS 模型",
         text: "📝 待转换文本",
         textPlaceholder: "输入要转换为语音的文本...",
-        instructions: "🎭 语音指令（仅限 gpt-4o-mini-tts）",
+        instructions: "🎭 语音指令（仅限 gpt tts）",
         instructionsPlaceholder: "例如：说话要愉快积极。使用英式口音。",
         instructionsHint: "可以控制：口音、情感、语调、速度、音调",
         voice: "🗣️ 语音",
