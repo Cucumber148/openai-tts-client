@@ -210,13 +210,7 @@ class TTSClient {
             const ttsModels = data.data.filter(model => 
                 model.id.includes('tts') && 
                 !model.id.includes('whisper')
-            ).sort((a, b) => {
-                if (a.id.includes('gpt-4o-mini-tts')) return -1;
-                if (b.id.includes('gpt-4o-mini-tts')) return 1;
-                if (a.id.includes('tts-1-hd')) return -1;
-                if (b.id.includes('tts-1-hd')) return 1;
-                return a.id.localeCompare(b.id);
-            });
+            );
 
             modelSelect.innerHTML = '';
             
@@ -228,15 +222,11 @@ class TTSClient {
             ttsModels.forEach(model => {
                 const option = document.createElement('option');
                 option.value = model.id;
-                
-                let description = model.id;
-                
-                option.textContent = model.id + description;
+                option.textContent = model.id;
                 modelSelect.appendChild(option);
             });
 
-            // Select best available model by default
-            const defaultModel = ttsModels[0]; // Already sorted by priority
+            const defaultModel = ttsModels[0];
             if (defaultModel) {
                 modelSelect.value = defaultModel.id;
                 this.updateUIForModel(defaultModel.id);
