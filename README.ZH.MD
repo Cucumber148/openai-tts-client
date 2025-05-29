@@ -1,96 +1,82 @@
-# OpenAI TTS Web 客户端
+# OpenAI TTS Web Client                                                                          
+[English](README.MD) | [Русский](README.RU.MD) | [中文](README.ZH.MD)                            
 
-[English](README.MD) | [Русский](README.RU.MD) | [中文](README.ZH.MD)
-
-用于 OpenAI 文本转语音 API 的简单网络客户端。所有功能集成在单个 HTML 文件中。
+一个简单的网页客户端，用于使用 OpenAI 文本转语音 API，支持多语言界面。
 
 ## 功能特性
 
-- 通过 API 自动加载可用的 TTS 模型
-- 支持 11 种语音：alloy、ash、ballad、coral、echo、fable、nova、onyx、sage、shimmer
-- 支持 gpt-4o-mini-tts 模型的语音控制提示
-- 可配置语速、音频格式和语音指令
-- 带有详细过程信息的进度条
-- 内置音频播放器和下载功能
-- 支持 50+ 种语言（针对英语优化）
+- **自动加载模型**：通过 API 获取所有可用的 TTS 模型
+- **10 种语音**：alloy、ash、ballad、coral、echo、fable、nova、onyx、sage、shimmer              
+- **支持 GPT 模型**：通过提示词控制语音（口音、情感、语调）
+- **灵活设置**：语音速度、音频格式、语音指令                       
+- **响应式设计**：适配桌面和移动设备
 
-## 安装和使用
+## 快速开始
 
-1. 下载 `openai-tts-client.html` 文件
-2. 在浏览器中打开（本地运行，无需服务器）
-3. 输入您的 OpenAI API 密钥
-4. 输入文本并生成语音
+1. 打开 [https://cucumber148.github.io/openai-tts-client](https://cucumber148.github.io/openai-tts-client)
+2. 输入您的 OpenAI API 密钥                                                                   
+3. 选择模型和语音
+4. 输入文本并点击"生成语音"                                                  
 
 ## 支持的模型
-
-- **gpt-4o-mini-tts** - 通过提示控制语音的模型
-- **tts-1** - 标准质量，快速生成
-- **tts-1-hd** - 高质量音频
 
 应用程序会自动从您的 OpenAI 账户加载所有可用的 TTS 模型。
 
 ## 音频格式
 
 - **MP3** - 通用格式（默认）
-- **Opus** - 用于互联网流媒体，低延迟
+- **Opus** - 用于网络流媒体，低延迟
 - **AAC** - 适用于移动设备和 YouTube
 - **FLAC** - 无损压缩
 - **WAV** - 无压缩，低延迟
 - **PCM** - 原始音频数据
 
-## 语音控制
+## 语音控制（GPT 模型）
 
-gpt-4o-mini-tts 模型支持控制语音各个方面的指令：
+GPT 模型支持使用指令控制语音的各种方面：
 
-- 口音："使用英式口音"
-- 情感色调："说话要愉快有活力"
-- 语音音调："像电台主持人一样说话"
-- 语速："慢慢清楚地说话"
-- 发音风格："小声说话"
+- **口音**："使用英式口音"
+- **情感**："说话要愉快而有活力"
+- **语调**："像电台主持人一样说话"
+- **节奏**："说话要慢而清晰"
+- **风格**："轻声说话"
 
-## 技术详情
+## 技术特点
 
-- 单个 HTML 文件，无外部依赖
-- 在浏览器中本地运行
-- API 密钥存储在浏览器 localStorage 中
-- 直接向 OpenAI API 发送请求
-- 在浏览器控制台中详细记录以便调试
+- 根据浏览器设置自动检测语言
+- 动态模型支持 - 自动获取 OpenAI 的新模型
+- 在浏览器中本地存储 API 密钥和设置
+- 直接向 OpenAI API 发送请求，无中间服务器
 
-## 系统要求
+## 要求
 
-- 有权访问 TTS 模型的 OpenAI API 密钥
-- 支持 Fetch API 的现代浏览器
-- 互联网连接
+- 具有 TTS 模型访问权限的 OpenAI API 密钥
 
 ## 限制
 
 - 最大文本长度：4096 个字符
-- 语速仅可在 tts-1 和 tts-1-hd 模型中调整
-- 静态语音列表（OpenAI 不提供语音枚举的 API）
+- 语音速度仅可在传统模型中调整
 
-## 定价
+## 本地开发
 
-使用标准 OpenAI 费率：大约每 1000 个输入字符 $0.015。
+```bash
+git clone https://github.com/cucumber148/openai-tts-client
+cd openai-tts-client
+```
 
-## 故障排除
+## 支持
 
-如果出现问题：
+如遇到问题：
 
-1. 打开浏览器控制台 (F12)
-2. 检查详细的请求和响应日志
-3. 验证 API 密钥的正确性
-4. 检查 OpenAI 账户限制和余额
+1. 检查浏览器控制台（F12）是否有错误
+2. 确保 API 密钥正确
+3. 检查 OpenAI 账户限制
+4. 在 GitHub 仓库中创建 issue
 
-## 文档
+## 关于项目
 
-- [OpenAI 文本转语音指南](https://platform.openai.com/docs/guides/text-to-speech)
-- [API 参考](https://platform.openai.com/docs/api-reference/audio/createSpeech)
-- [定价信息](https://openai.com/pricing)
-
-## 关于此项目
-
-我在几分钟内编写了这个应用程序，用于快速测试 OpenAI TTS API。决定在 GitHub 上分享，以防有人觉得有用。
+我在几分钟内编写了这个应用程序，用于快速测试 OpenAI TTS API。决定在 GitHub 上分享，以防对其他人有用。
 
 ## 许可证
 
-GPL-3.0 许可证
+GPL-3.0 License
