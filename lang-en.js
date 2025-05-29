@@ -17,13 +17,13 @@ window.translations.en = {
         model: "🤖 TTS Model",
         text: "📝 Text to Speech",
         textPlaceholder: "Enter text to convert to speech...",
-        instructions: "🎭 Speech Instructions (gpt tts only)",
+        instructions: "🎭 Speech Instructions (GPT models only)",
         instructionsPlaceholder: "E.g.: Speak cheerfully and positively. Use a British accent.",
         instructionsHint: "You can control: accent, emotions, intonation, speed, tone",
         voice: "🗣️ Voice",
         format: "🎧 Audio Format",
         speed: "⚡ Speech Speed (legacy models only)",
-        speedHint: "For gpt-4o-mini-tts use instructions above",
+        speedHint: "For GPT models use instructions above",
         generateBtn: "🎤 Generate Speech"
     },
     
@@ -61,13 +61,6 @@ window.translations.en = {
         flac: "FLAC (lossless)",
         wav: "WAV (low latency)",
         pcm: "PCM (raw data)"
-    },
-    
-    // Voice tags
-    voiceTags: {
-        count: "10 voices",
-        optimized: "Optimized for English",
-        tryOn: "Try on OpenAI.com"
     },
     
     // Loading and progress
