@@ -1,5 +1,7 @@
 # OpenAI TTS Web Client
 
+> This project is an unofficial client for OpenAI's TTS API. It is not affiliated with or endorsed by OpenAI.
+
 [English](README.MD) | [Русский](README.RU.MD) | [中文](README.ZH.MD)
 
 A simple web client for OpenAI Text-to-Speech API with multi-language interface support.
