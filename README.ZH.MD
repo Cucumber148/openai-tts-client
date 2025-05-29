@@ -1,7 +1,7 @@
 # OpenAI TTS Web Client                                                                          
 [English](README.MD) | [Русский](README.RU.MD) | [中文](README.ZH.MD)                            
 
-一个简单的网页客户端，用于使用 OpenAI 文本转语音 API，支持多语言界面。
+一个简单的非官方 OpenAI 语音合成 API 网页客户端，支持多语言界面。
 
 ## 功能特性
 
